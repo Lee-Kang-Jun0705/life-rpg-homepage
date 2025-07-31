@@ -238,7 +238,7 @@ export default function HomePage() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 text-xl">✗</span>
-                  <span className="text-gray-700">"오늘도 운동 못했네... 내일은 꼭!"</span>
+                  <span className="text-gray-700">&quot;오늘도 운동 못했네... 내일은 꼭!&quot;</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 text-xl">✗</span>
