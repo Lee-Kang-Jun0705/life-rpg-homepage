@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 237 97% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    
+    /* 캔디 컬러 팔레트 🍭 */
+    --candy-pink: #FFB6C1;
+    --candy-blue: #87CEEB;
+    --candy-yellow: #FFEB9C;
+    --candy-green: #98FB98;
+    --candy-purple: #DDA0DD;
+    --candy-orange: #FFDAB9;
+    --candy-mint: #B5EAD7;
+    --candy-coral: #FFB5BA;
+    
+    /* 스탯 그라데이션 🌈 */
+    --stat-health-start: #FF6B6B;
+    --stat-health-end: #FFB6C1;
+    --stat-learning-start: #4ECDC4;
+    --stat-learning-end: #87CEEB;
+    --stat-relationship-start: #95E1D3;
+    --stat-relationship-end: #98FB98;
+    --stat-achievement-start: #FFD93D;
+    --stat-achievement-end: #FFEB9C;
+  }
+  
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 0 0% 100%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 100%;
+    --primary: 237 97% 64%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    
+    /* 다크모드 캔디 컬러 */
+    --candy-pink: #FF6B9D;
+    --candy-blue: #66D9EF;
+    --candy-yellow: #FFD93D;
+    --candy-green: #7FFF7F;
+    --candy-purple: #C77DFF;
+    --candy-orange: #FFB347;
+    --candy-mint: #72F2D9;
+    --candy-coral: #FF6B6B;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply scroll-mt-20 tracking-tight;
+  }
+}
+
+@layer components {
+  /* 3D 버블 버튼 */
+  .button-3d {
+    @apply relative transition-all duration-200;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-3d:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 그라데이션 배경 */
+  .gradient-health {
+    background: linear-gradient(135deg, var(--stat-health-start), var(--stat-health-end));
+  }
+  
+  .gradient-learning {
+    background: linear-gradient(135deg, var(--stat-learning-start), var(--stat-learning-end));
+  }
+  
+  .gradient-relationship {
+    background: linear-gradient(135deg, var(--stat-relationship-start), var(--stat-relationship-end));
+  }
+  
+  .gradient-achievement {
+    background: linear-gradient(135deg, var(--stat-achievement-start), var(--stat-achievement-end));
+  }
+  
+  /* 부드러운 카드 */
+  .card-soft {
+    @apply rounded-3xl p-8 transition-all duration-300;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-soft:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+}
